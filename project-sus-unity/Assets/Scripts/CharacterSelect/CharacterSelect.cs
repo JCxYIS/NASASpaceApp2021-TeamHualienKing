@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using DG.Tweening;
+using UnityEngine.AddressableAssets;
 
 public class CharacterSelect : MonoBehaviour
 {
@@ -27,8 +28,10 @@ public class CharacterSelect : MonoBehaviour
         for(int i = 0; i < Settings.TOTAL_CHARCTER_COUNT; i++)
         {
             var go =  Instantiate(_buttonPrefab.gameObject, _buttonPrefab.transform.parent).GetComponent<CharacterSelectButton>();
-            // go.Icon = ...
             Character chara = ((Character)i);
+            Addressables.LoadAssetAsync<Sprite>("icon_"+chara.ToString()).Completed += res => {
+                go.Icon.sprite = res.Result;
+            };
             go.Name.text = chara.ToString();
             go.Desc.text = EnumHelper.GetEnumDescription(chara);
             go.Character = chara;
