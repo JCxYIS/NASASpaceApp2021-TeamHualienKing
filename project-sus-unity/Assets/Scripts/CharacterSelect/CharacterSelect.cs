@@ -3,14 +3,16 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using DG.Tweening;
 
 public class CharacterSelect : MonoBehaviour
 {
     [SerializeField] TMP_Text _titleText;
     [SerializeField] GameObject _buttonPrefab;
+    [SerializeField] Button _startGameButton;
 
     List<Button> buttons = new List<Button>();
-    [SerializeField] List<CharacterSelectButton> SelectedCharacters = new List<CharacterSelectButton>();
+    [ReadOnly, SerializeField] List<CharacterSelectButton> selectedCharacters = new List<CharacterSelectButton>();
 
 
 
@@ -20,7 +22,8 @@ public class CharacterSelect : MonoBehaviour
     /// </summary>
     void Start()
     {
-
+        _startGameButton.transform.DOScale(Vector3.one * 1.2f, 0.5f).SetLoops(-1, LoopType.Yoyo);
+        _startGameButton.gameObject.SetActive(false);
         for(int i = 0; i < Settings.TOTAL_CHARCTER_COUNT; i++)
         {
             var go =  Instantiate(_buttonPrefab.gameObject, _buttonPrefab.transform.parent).GetComponent<CharacterSelectButton>();
@@ -41,28 +44,36 @@ public class CharacterSelect : MonoBehaviour
     /// </summary>
     void Update()
     {
-        _titleText.text = $"SELECT {Settings.PLAYER_COUNT} CHARACTERS <size=40>{SelectedCharacters.Count}/{Settings.PLAYER_COUNT}</size>";
+        _titleText.text = $"SELECT {Settings.PLAYER_COUNT} CHARACTERS <size=40>{selectedCharacters.Count}/{Settings.PLAYER_COUNT}</size>";
     }
 
 
     public void Select(CharacterSelectButton character)
     {
-        var isActive = SelectedCharacters.Exists(c => c == character);
+        var isActive = selectedCharacters.Exists(c => c == character);
 
         if(isActive)
         {
-            SelectedCharacters.Remove(character);
+            selectedCharacters.Remove(character);
         }
         else
         {
-            if(SelectedCharacters.Count >= Settings.PLAYER_COUNT)
+            if(selectedCharacters.Count >= Settings.PLAYER_COUNT)
             {
                 return;
             }
-            SelectedCharacters.Add(character);
+            selectedCharacters.Add(character);
         }
 
         isActive = !isActive;
         character.Button.GetComponent<Image>().color = isActive ? new Color(1, 1, 0.3f) : Color.white;
+        _startGameButton.gameObject.SetActive(selectedCharacters.Count >= Settings.PLAYER_COUNT);            
+    }
+
+    public void StartGame()
+    {
+        List<Character> clist = new List<Character>();
+        selectedCharacters.ForEach(c => clist.Add(c.Character));
+        GameManager.Instance.SelectedCharacters(clist);
     }
 }

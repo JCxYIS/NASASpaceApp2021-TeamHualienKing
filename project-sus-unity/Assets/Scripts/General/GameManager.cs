@@ -1,8 +1,9 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoSingleton<GameManager>
 {    
     public List<Character> Characters;
 
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void Start()
     {
-        
+        DontDestroyOnLoad(gameObject);
     }
 
     /// <summary>
@@ -24,8 +25,23 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void SelectedCharacters()
+    public void SelectedCharacters(List<Character> characters)
     {
+        Characters = characters;
+        StopAllCoroutines();
+        StartCoroutine(LoadMainScene());
+    }
 
+    public IEnumerator LoadMainScene()
+    {
+        var load = SceneManager.LoadSceneAsync("Main");
+        LoadingScreen.SetContext("Now Loading Main Scene");
+        while(!load.isDone)
+        {
+            LoadingScreen.SetProgress(load.progress);            
+            yield return load;
+        }
+
+        LoadingScreen.SetProgress(1);
     }
 }
