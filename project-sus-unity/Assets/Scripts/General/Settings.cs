@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public static class Settings
 {
+    public const string VESRION = "v.0.1";
+
     /// <summary>
     /// 
     /// </summary>

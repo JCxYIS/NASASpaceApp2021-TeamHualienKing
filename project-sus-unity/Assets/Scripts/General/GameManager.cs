@@ -25,6 +25,12 @@ public class GameManager : MonoSingleton<GameManager>
         
     }
 
+
+    public void LandingSceneOk()
+    {
+        SceneManager.LoadScene("CharacterSelect");
+    }
+
     public void SelectedCharacters(List<Character> characters)
     {
         Characters = characters;
