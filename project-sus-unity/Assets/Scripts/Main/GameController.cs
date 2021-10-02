@@ -68,9 +68,15 @@ public class GameController : MonoSingleton<GameController>
         for(int i = 0; i < Players.Count; i++) // player movement
         {
             if(i == ControllingPlayerIndex)
+            {
                 Players[i].PlayerController.SetCommand(moveCmd);
+                Players[i].IsControlling = true;
+            }
             else
+            {
                 Players[i].PlayerController.SetCommand(Vector2.zero);
+                Players[i].IsControlling = false;
+            }
         }
         for(int i = 0; i <= 9; i++)
         {

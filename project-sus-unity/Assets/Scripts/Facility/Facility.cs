@@ -8,7 +8,8 @@ public class Facility : MonoBehaviour
     // public 
     SpriteRenderer _spriteRenderer;
 
-    // [Header("Param")]
+    [Header("Param")]
+    public string Name = "";
     Material NormalMaterial;
     Material OutlinedMaterial;
 
@@ -26,6 +27,7 @@ public class Facility : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         NormalMaterial = Resources.Load<Material>("Material/Normal");
         OutlinedMaterial = Resources.Load<Material>("Material/Outline");
+        name = $"FACILITY - {Name}";
     }
 
     /// <summary>
@@ -33,31 +35,24 @@ public class Facility : MonoBehaviour
     /// </summary>
     void Update()
     {
+        
+    }
+
+    /// <summary>
+    /// This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    void FixedUpdate()
+    {
         if(IsTriggerStay)
             _spriteRenderer.material = OutlinedMaterial;
         else
             _spriteRenderer.material = NormalMaterial;
+        
+        IsTriggerStay = false;
     }
 
-
-
-    /// <summary>
-    /// Sent when another object enters a trigger collider attached to this
-    /// object (2D physics only).
-    /// </summary>
-    /// <param name="other">The other Collider2D involved in this collision.</param>
-    void OnTriggerEnter2D(Collider2D other)
+    public void Trigger()
     {
         IsTriggerStay = true;
-    }
-
-    /// <summary>
-    /// Sent when another object leaves a trigger collider attached to
-    /// this object (2D physics only).
-    /// </summary>
-    /// <param name="other">The other Collider2D involved in this collision.</param>
-    void OnTriggerExit2D(Collider2D other)
-    {
-        IsTriggerStay = false;
     }
 }

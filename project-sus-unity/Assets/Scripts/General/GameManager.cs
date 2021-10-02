@@ -42,15 +42,15 @@ public class GameManager : MonoSingleton<GameManager>
     public IEnumerator LoadMainScene()
     {
         var load = SceneManager.LoadSceneAsync("Main");
-        load.allowSceneActivation = false;
+        // load.allowSceneActivation = false;
         LoadingScreen.SetContext("Now Loading Main Scene");
-        while(load.progress < 0.9f)
+        while(!load.isDone)
         {
             LoadingScreen.SetProgress(load.progress);            
             yield return load;
         }
 
-        load.allowSceneActivation = true;
+        // load.allowSceneActivation = true;
         LoadingScreen.SetProgress(1);
     }
 }

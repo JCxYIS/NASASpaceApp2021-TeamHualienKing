@@ -19,6 +19,9 @@ public class Player : MonoBehaviour
     [ReadOnly]
     public int HpMax;
 
+    [ReadOnly]
+    public bool IsControlling;
+
     [HideInInspector] 
     public PlayerController PlayerController;
 
@@ -55,5 +58,22 @@ public class Player : MonoBehaviour
             Hp = HpMax;
         if(Hp <= 0)
             GameController.Instance.GameOver();
+    }
+
+    /// <summary>
+    /// Sent each frame where another object is within a trigger collider
+    /// attached to this object (2D physics only).
+    /// </summary>
+    /// <param name="other">The other Collider2D involved in this collision.</param>
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if(!IsControlling)
+            return;
+
+        Facility facility = other.GetComponent<Facility>();
+        if(facility)
+        {
+            facility.Trigger();
+        }
     }
 }
