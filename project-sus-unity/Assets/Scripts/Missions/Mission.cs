@@ -23,8 +23,8 @@ public abstract class Mission : MonoBehaviour
         pbs = new PromptBoxSettings{
             Title = Title,
             Content = Desc,
-            ConfirmButtonText = "Roger.",
-            CancelButtonText = "More information",
+            ConfirmButtonText = "Roger",
+            CancelButtonText = "Learn More",
             ConfirmCallback = ()=>OnReadInfoConfirm?.Invoke(),
             CancelCallback = ()=>OnReadInfoCancel?.Invoke(),
         };

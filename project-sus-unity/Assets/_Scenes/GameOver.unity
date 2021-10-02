@@ -153,7 +153,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 163244894}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -371,8 +371,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1340005955}
-  - {fileID: 47558801}
   - {fileID: 699611108}
+  - {fileID: 47558801}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -581,7 +581,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 163244894}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -608,17 +608,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '-'
+  m_text: One of your crew member is found dead...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ff1dba8f1ce89104abfd6a0264ac82c6, type: 2}
-  m_sharedMaterial: {fileID: 4778482026333146006, guid: ff1dba8f1ce89104abfd6a0264ac82c6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 66040d22258b9b64bb2153359d171e46, type: 2}
+  m_sharedMaterial: {fileID: 1011395583981116280, guid: 66040d22258b9b64bb2153359d171e46, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4282352893
+  m_fontColor: {r: 0.990566, g: 0.51895386, b: 0.2476415, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -635,8 +635,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.6
-  m_fontSizeBase: 39.6
+  m_fontSize: 35.8
+  m_fontSizeBase: 35.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -937,7 +937,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 71}
+  m_AnchoredPosition: {x: 0, y: 37.5}
   m_SizeDelta: {x: 805.35, y: 228.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1340005956
@@ -1193,6 +1193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf4e9acd6547224e95a31e853c1604b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HappyBalls: []
 --- !u!1 &2025798094
 GameObject:
   m_ObjectHideFlags: 0

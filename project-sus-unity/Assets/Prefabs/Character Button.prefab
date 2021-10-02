@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7058523545913152069}
   - component: {fileID: 1921496779266647973}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: Index
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 4809410431569026794}
   - component: {fileID: 4809410431569026795}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -458,10 +458,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'HP: 100/100'
+  m_text: 100 / 100
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ff1dba8f1ce89104abfd6a0264ac82c6, type: 2}
-  m_sharedMaterial: {fileID: 4778482026333146006, guid: ff1dba8f1ce89104abfd6a0264ac82c6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 66040d22258b9b64bb2153359d171e46, type: 2}
+  m_sharedMaterial: {fileID: 1011395583981116280, guid: 66040d22258b9b64bb2153359d171e46, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -614,7 +614,7 @@ GameObject:
   - component: {fileID: 4809410432074898166}
   - component: {fileID: 4809410432074898167}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
