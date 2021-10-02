@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoSingleton<GameController>
 {
@@ -9,7 +10,7 @@ public class GameController : MonoSingleton<GameController>
     /// <summary>
     /// Characters that player controls
     /// </summary>
-    [SerializeField] Player[] _players;
+    public Player[] Players;
 
     [SerializeField] PlayerButton[] _playerButtons;
 
@@ -42,8 +43,8 @@ public class GameController : MonoSingleton<GameController>
         // init players
         for(int i = 0; i < GameManager.Instance.Characters.Count; i++)
         {
-            _players[i].Init(GameManager.Instance.Characters[i]);
-            _playerButtons[i].Init(_players[i], i);
+            Players[i].Init(GameManager.Instance.Characters[i]);
+            _playerButtons[i].Init(Players[i], i);
         }
         SwitchPlayer(0);
     }
@@ -55,12 +56,12 @@ public class GameController : MonoSingleton<GameController>
     {
         // input handler
         Vector2 moveCmd = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        for(int i = 0; i < _players.Length; i++) // player movement
+        for(int i = 0; i < Players.Length; i++) // player movement
         {
             if(i == ControllingPlayerIndex)
-                _players[i].PlayerController.SetCommand(moveCmd);
+                Players[i].PlayerController.SetCommand(moveCmd);
             else
-                _players[i].PlayerController.SetCommand(Vector2.zero);
+                Players[i].PlayerController.SetCommand(Vector2.zero);
         }
         for(int i = 0; i <= 9; i++)
         {
@@ -76,12 +77,17 @@ public class GameController : MonoSingleton<GameController>
     /// </summary>
     public void SwitchPlayer(int index)
     {
-        if(index >= _players.Length)
+        if(index >= Players.Length)
             index = 0;
         else if(index < 0)
-            index = _players.Length - 1;
+            index = Players.Length - 1;
         
         ControllingPlayerIndex = index;
-        _virtualCam.Follow = _players[index].transform;
+        _virtualCam.Follow = Players[index].transform;
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
     }
 }

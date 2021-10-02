@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System;
 
-public enum Mission
+public enum MissionEnum
 {
     [Description("OMG!! Something bad happens!")]
     [EventFatalness(Fatalness.Fatal)]

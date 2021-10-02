@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using TMPro;
 using DG.Tweening;
 using UnityEngine.AddressableAssets;
+using System;
 
 public class CharacterSelect : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class CharacterSelect : MonoBehaviour
     {
         _startGameButton.transform.DOScale(Vector3.one * 1.2f, 0.5f).SetLoops(-1, LoopType.Yoyo);
         _startGameButton.gameObject.SetActive(false);
-        for(int i = 0; i < Settings.TOTAL_CHARCTER_COUNT; i++)
+        for(int i = 0; i < Enum.GetNames(typeof(Character)).Length; i++)
         {
             var go =  Instantiate(_buttonPrefab.gameObject, _buttonPrefab.transform.parent).GetComponent<CharacterSelectButton>();
             Character chara = ((Character)i);

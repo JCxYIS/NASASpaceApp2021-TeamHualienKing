@@ -71,4 +71,10 @@ public class PlayerController : MonoBehaviour
     {
         nextMoveCommand = moveCmd;
     }
+
+    public void SetVelocity(Vector2 velocity)
+    {
+        rigidbody2D.velocity = velocity;
+        SetCommand(Vector2.zero);
+    }
 }

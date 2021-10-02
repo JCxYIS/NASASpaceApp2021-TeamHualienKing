@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     void Awake()
     {
         PlayerController = GetComponent<PlayerController>();
+        DontDestroyOnLoad(gameObject);
     }
 
     public void Init(Character character)
@@ -43,5 +44,15 @@ public class Player : MonoBehaviour
         
         HpMax = 100;
         Hp = HpMax;
+    }
+
+
+    public void AddHealth(int add)
+    {
+        Hp += add;
+        if(Hp > HpMax)
+            Hp = HpMax;
+        if(Hp <= 0)
+            GameController.Instance.GameOver();
     }
 }

@@ -793,6 +793,11 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &743909666 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3334716693465858362, guid: 0e86ecdc720d62740b86e2c476604b4c, type: 3}
+  m_PrefabInstance: {fileID: 3334716694660766456}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &765095219
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,7 +1579,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 222, y: 222}
+  m_Size: {x: 666, y: 666}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1620,6 +1625,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1673344349}
   - component: {fileID: 1673344348}
+  - component: {fileID: 1673344350}
   m_Layer: 0
   m_Name: GameCntroller
   m_TagString: Untagged
@@ -1639,7 +1645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1abfc0cf6c640a4ba9b74acc3173357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _players:
+  Players:
   - {fileID: 1835208035}
   - {fileID: 1231110362}
   - {fileID: 2057762652}
@@ -1663,6 +1669,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1673344350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673344347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ff4e7d22d71fe547b4b2204a7c3982d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MissionPrefabs: []
+  _missionButton: {fileID: 743909666}
+  ActiveMissions: []
 --- !u!4 &1835208031 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1423716701562169964, guid: 436ecac6ab2734044a75df14452cfb63, type: 3}
