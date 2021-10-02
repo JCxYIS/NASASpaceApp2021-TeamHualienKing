@@ -17,30 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 27a7742744ae12944ac56c3f8ddb938d
   m_SerializeEntries:
-  - m_GUID: c7986115d39c9174ab664d4c823c8ed7
-    m_Address: icon_Pilot
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: c7986115d39c9174ab664d4c823c8ed7, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: c7986115d39c9174ab664d4c823c8ed7, type: 3}
-  - m_GUID: b38a6196201620b4091eb34d509d08cd
-    m_Address: icon_Engineer
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: b38a6196201620b4091eb34d509d08cd, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: b38a6196201620b4091eb34d509d08cd, type: 3}
-  - m_GUID: 6d37450ab21016449a11c03832472e2a
-    m_Address: icon_Doctor
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: 6d37450ab21016449a11c03832472e2a, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 6d37450ab21016449a11c03832472e2a, type: 3}
-  - m_GUID: e571e3bc75defd541a158371e4db683d
-    m_Address: icon_Philosopher
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: e571e3bc75defd541a158371e4db683d, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: e571e3bc75defd541a158371e4db683d, type: 3}
   - m_GUID: 81785a278e570ca4ca29326616ff8263
     m_Address: sprite_Engineer
     m_ReadOnly: 0

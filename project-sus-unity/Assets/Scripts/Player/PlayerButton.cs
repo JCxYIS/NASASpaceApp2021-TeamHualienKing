@@ -31,7 +31,7 @@ public class PlayerButton : MonoBehaviour
         GetComponent<Button>().onClick.AddListener(()=>GameController.Instance.SwitchPlayer(index));
         
         Character chara = player.Character;
-        Addressables.LoadAssetAsync<Sprite>("icon_"+chara.ToString()).Completed += res => {
+        Addressables.LoadAssetAsync<Sprite>("sprite_"+chara.ToString()).Completed += res => {
             Icon.sprite = res.Result;
         };
         Name.text = chara.ToString();

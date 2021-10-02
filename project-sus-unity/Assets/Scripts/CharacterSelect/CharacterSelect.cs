@@ -30,7 +30,7 @@ public class CharacterSelect : MonoBehaviour
         {
             var go =  Instantiate(_buttonPrefab.gameObject, _buttonPrefab.transform.parent).GetComponent<CharacterSelectButton>();
             Character chara = ((Character)i);
-            Addressables.LoadAssetAsync<Sprite>("icon_"+chara.ToString()).Completed += res => {
+            Addressables.LoadAssetAsync<Sprite>("sprite_"+chara.ToString()).Completed += res => {
                 go.Icon.sprite = res.Result;
             };
             go.Name.text = chara.ToString();
