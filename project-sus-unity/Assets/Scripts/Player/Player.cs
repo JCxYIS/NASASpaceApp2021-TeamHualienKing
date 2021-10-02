@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+using UnityEngine.AddressableAssets;
 
 /// <summary>
 /// A single unit that player control
@@ -36,6 +36,10 @@ public class Player : MonoBehaviour
     public void Init(Character character)
     {
         Character = character;
+
+        Addressables.LoadAssetAsync<Sprite>("sprite_"+character.ToString()).Completed += res => {
+            GetComponent<SpriteRenderer>().sprite = res.Result;
+        };
         
         HpMax = 100;
         Hp = HpMax;
