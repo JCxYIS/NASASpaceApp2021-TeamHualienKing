@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Events;
 using JC.Utility;
+using DG.Tweening;
 
 public class PromptBox : MonoBehaviour
 {
@@ -61,6 +62,8 @@ public class PromptBox : MonoBehaviour
         
         // on
         gameObject.SetActive(true);
+        Transform target = transform.GetChild(0);
+        target.DOScale(Vector3.one, 0.39f).From(Vector3.zero).SetEase(Ease.OutBounce).SetUpdate(true);
     }  
 
     public void Hide()

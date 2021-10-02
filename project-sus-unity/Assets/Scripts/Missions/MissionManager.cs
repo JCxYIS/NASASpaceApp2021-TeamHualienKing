@@ -19,10 +19,14 @@ public class MissionManager : MonoSingleton<MissionManager>
     GameObject _missionButton;
 
     Transform _missionContainer;
-
+    
+    [Header("Var")]
 
     [ReadOnly]
     public List<Mission> ActiveMissions = new List<Mission>();
+
+    [ReadOnly]
+    public int NowSec = 0;
 
 
 
@@ -48,7 +52,7 @@ public class MissionManager : MonoSingleton<MissionManager>
     /// </summary>
     void Start()
     {
-        
+        StartCoroutine(Tick());
     }
 
     /// <summary>
@@ -59,6 +63,30 @@ public class MissionManager : MonoSingleton<MissionManager>
         if(Input.GetKeyDown(KeyCode.F2))
         {
             StartMission();
+        }
+    }
+
+    IEnumerator Tick()
+    {
+        int lastMission = 0;
+        while(true)
+        {
+            float chance = Random.Range(60f, 90f) * Mathf.Pow(0.8f, lastMission+40-NowSec);
+            
+            
+            float fate = Random.Range(0f, 1f);
+            if(fate <= chance)
+            {
+                print($"<color=yellow>DT={-lastMission+NowSec}  MISSION CHANCE = {chance*100}%</color> FATE="+fate*100);
+                StartMission();
+                lastMission = NowSec;
+            }
+            else
+            {
+                print($"DT={-lastMission+NowSec}  MISSION CHANCE = {chance*100}%");
+            }
+            yield return new WaitForSeconds(1);
+            NowSec++;
         }
     }
 
@@ -80,7 +108,8 @@ public class MissionManager : MonoSingleton<MissionManager>
             var mm = Instantiate(finalMission.gameObject).GetComponent<Mission>();
             ActiveMissions.Add(mm);
             RefreshButtons();
-            print("Add challenge #"+mm);
+            print($"Add challenge #{mm.Id} / {mm}");
+            mm.ReadInfo();
         }
         else
         {
@@ -101,6 +130,10 @@ public class MissionManager : MonoSingleton<MissionManager>
             Destroy(_missionContainer.GetChild(i).gameObject);
         }
 
+        // sort fatalness
+        ActiveMissions.Sort((s1, s2) => (int)s2.Fatalness - (int)s1.Fatalness);
+
+        // print
         foreach(var m in ActiveMissions)
         {
             var v = Instantiate(_missionButton, _missionContainer);
@@ -119,4 +152,5 @@ public class MissionManager : MonoSingleton<MissionManager>
             v.GetComponent<Image>().color = color;
         }
     }
+    
 }

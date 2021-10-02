@@ -10,7 +10,7 @@ public class GameController : MonoSingleton<GameController>
     /// <summary>
     /// Characters that player controls
     /// </summary>
-    public Player[] Players;
+    public List<Player> Players;
 
     [SerializeField] PlayerButton[] _playerButtons;
 
@@ -65,7 +65,7 @@ public class GameController : MonoSingleton<GameController>
     {
         // input handler
         Vector2 moveCmd = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        for(int i = 0; i < Players.Length; i++) // player movement
+        for(int i = 0; i < Players.Count; i++) // player movement
         {
             if(i == ControllingPlayerIndex)
                 Players[i].PlayerController.SetCommand(moveCmd);
@@ -89,10 +89,10 @@ public class GameController : MonoSingleton<GameController>
     /// </summary>
     public void SwitchPlayer(int index)
     {
-        if(index >= Players.Length)
+        if(index >= Players.Count)
             index = 0;
         else if(index < 0)
-            index = Players.Length - 1;
+            index = Players.Count - 1;
         
         ControllingPlayerIndex = index;
         _virtualCam.Follow = Players[index].transform;

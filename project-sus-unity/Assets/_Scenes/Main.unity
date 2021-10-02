@@ -2225,6 +2225,7 @@ MonoBehaviour:
   MissionPrefabs: []
   _missionButton: {fileID: 743909666}
   ActiveMissions: []
+  NowSec: 0
 --- !u!1 &1712684564
 GameObject:
   m_ObjectHideFlags: 0

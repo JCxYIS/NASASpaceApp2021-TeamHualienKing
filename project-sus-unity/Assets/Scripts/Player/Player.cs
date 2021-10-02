@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
     public void Init(Character character)
     {
         Character = character;
+        name = Character.ToString();
 
         Addressables.LoadAssetAsync<Sprite>("sprite_"+character.ToString()).Completed += res => {
             GetComponent<SpriteRenderer>().sprite = res.Result;

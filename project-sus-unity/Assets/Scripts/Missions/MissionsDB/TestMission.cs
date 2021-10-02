@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class TestMission : Mission
 {
-    public override int Id => 0;
+    public override int Id => 1001;
 
     public override Fatalness Fatalness => Fatalness.Information;
 

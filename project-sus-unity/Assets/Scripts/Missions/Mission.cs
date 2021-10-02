@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using JC;
+using System;
 
 public abstract class Mission : MonoBehaviour
 {
@@ -16,20 +17,37 @@ public abstract class Mission : MonoBehaviour
     /// </summary>
     public virtual void ReadInfo()
     {
-        PromptBoxSettings pbs = new PromptBoxSettings{
+        Time.timeScale = 0;
+
+        PromptBoxSettings pbs = null;
+        pbs = new PromptBoxSettings{
             Title = Title,
             Content = Desc,
             ConfirmButtonText = "Roger.",
             CancelButtonText = "More information",
+            ConfirmCallback = ()=>OnReadInfoConfirm?.Invoke(),
+            CancelCallback = ()=>OnReadInfoCancel?.Invoke(),
         };
 
+        // hide cancel (More information) if no link
         if(string.IsNullOrEmpty(Link))
         {
             pbs.CancelButtonText = "";
         }
 
+        OnReadInfoConfirm += ()=> {
+            Time.timeScale = 1;
+        };
+        OnReadInfoCancel += ()=>{
+            PromptBox.Create(pbs);
+            Application.OpenURL(Link);
+        };
+
         PromptBox.Create(pbs);
     }
+
+    public event Action OnReadInfoConfirm;
+    public event Action OnReadInfoCancel;
 
     public virtual void Done()
     {
