@@ -10,7 +10,7 @@ public class TestMissionDanger : Mission
 
     public override string Title => "Someone is hurt";
 
-    public override string Desc => $"BONK! {victim.name} hit by a baseball bat! His HP -3 per seconds for 10 seconds!";
+    public override string Desc => $"BONK! <color=yellow>{victim.name}</color> is hit by a baseball bat! His HP will -3 per seconds for 10 seconds!";
 
     public override string Link => "https://youtu.be/dQw4w9WgXcQ";
 
@@ -23,7 +23,7 @@ public class TestMissionDanger : Mission
     /// </summary>
     void Awake()
     {
-        victim = GameController.Instance.Players[Random.Range(0, GameController.Instance.Players.Count)];
+        victim = RandomPlayer();
         OnReadInfoConfirm += ()=>{
             StartCoroutine(Task());
         };

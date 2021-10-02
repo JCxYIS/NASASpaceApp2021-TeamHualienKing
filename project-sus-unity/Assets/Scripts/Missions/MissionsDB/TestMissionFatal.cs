@@ -10,7 +10,7 @@ public class TestMissionFatal : Mission
 
     public override string Title => "Someone is VERY hurt";
 
-    public override string Desc => $"{victim.name} Steps on LEGO!!! AAAAAAA!! \nHis HP will harshly decrease until u find a doctor!";
+    public override string Desc => $"AAAAAAA!! <color=yellow>{victim.name}</color> has stepped on LEGO!!! \nHis HP will harshly decrease until u find a doctor!";
 
     public override string Link => "https://youtu.be/dQw4w9WgXcQ";
 
@@ -23,7 +23,7 @@ public class TestMissionFatal : Mission
     /// </summary>
     void Awake()
     {
-        victim = GameController.Instance.Players[Random.Range(0, GameController.Instance.Players.Count)];
+        victim = RandomPlayer();
         OnReadInfoConfirm += ()=>{
             StartCoroutine(Task());
         };

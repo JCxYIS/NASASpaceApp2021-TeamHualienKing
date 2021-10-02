@@ -46,9 +46,9 @@ public class PlayerButton : MonoBehaviour
         HpSlider.value = Player.Hp/(float)Player.HpMax;
 
         if(GameController.Instance.ControllingPlayerIndex == Index)
-            ControlBadge.color = Color.white;
-        else
             ControlBadge.color = Color.green;
+        else
+            ControlBadge.color = Color.white;
 
     }
 }

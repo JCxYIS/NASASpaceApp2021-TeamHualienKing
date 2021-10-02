@@ -55,4 +55,20 @@ public abstract class Mission : MonoBehaviour
     }
 
     public abstract void Fail();
+
+
+    protected List<Player> AllPlayer()
+    {
+        return GameController.Instance.Players;
+    }
+
+    protected Player RandomPlayer()
+    {
+        return AllPlayer()[UnityEngine.Random.Range(0, GameController.Instance.Players.Count)];
+    }
+
+    protected Player CurrentPlayer()
+    {
+        return AllPlayer()[GameController.Instance.ControllingPlayerIndex];
+    }
 }
