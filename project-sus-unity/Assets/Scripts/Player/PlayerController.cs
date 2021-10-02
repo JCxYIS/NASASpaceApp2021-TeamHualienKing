@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        nextMoveCommand = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        // nextMoveCommand = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         
         if(nextMoveCommand.magnitude <= 0)
             IdleState();
@@ -67,5 +67,8 @@ public class PlayerController : MonoBehaviour
         // spriteRenderer.flipX = rigidbody2D.velocity.x >= 0 ? true : false;
     }
 
-
+    public void SetCommand(Vector2 moveCmd)
+    {
+        nextMoveCommand = moveCmd;
+    }
 }

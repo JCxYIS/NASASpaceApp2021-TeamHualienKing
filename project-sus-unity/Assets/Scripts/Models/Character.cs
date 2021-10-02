@@ -15,6 +15,6 @@ public enum Character
     Pilot,
 
     [Description("Payload slot +3")]
-    BusinessMan,
+    Philosopher,
 
 }
