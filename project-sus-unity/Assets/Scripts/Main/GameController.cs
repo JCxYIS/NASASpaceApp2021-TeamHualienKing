@@ -82,6 +82,16 @@ public class GameController : MonoSingleton<GameController>
 
         // update time
         Time += UnityEngine.Time.deltaTime;
+        
+        // cheat
+        if(Input.GetKeyDown(KeyCode.F9))
+        {
+            GameOver();
+        }
+        if(Input.GetKeyDown(KeyCode.F10))
+        {
+            Victory();
+        }
     }
 
     /// <summary>
@@ -101,5 +111,10 @@ public class GameController : MonoSingleton<GameController>
     public void GameOver()
     {
         SceneManager.LoadScene("GameOver");
+    }
+
+    public void Victory()
+    {
+        SceneManager.LoadScene("Victory");
     }
 }
