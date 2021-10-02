@@ -10,7 +10,14 @@ using System.Collections.Generic;
 public class Player : MonoBehaviour
 {
     [Header("Variables")]
-    public Character character;
+    [ReadOnly]
+    public Character Character;
+
+    [ReadOnly]
+    public int Hp;
+
+    [ReadOnly]
+    public int HpMax;
 
     [HideInInspector] 
     public PlayerController PlayerController;
@@ -24,5 +31,13 @@ public class Player : MonoBehaviour
     void Awake()
     {
         PlayerController = GetComponent<PlayerController>();
+    }
+
+    public void Init(Character character)
+    {
+        Character = character;
+        
+        HpMax = 100;
+        Hp = HpMax;
     }
 }

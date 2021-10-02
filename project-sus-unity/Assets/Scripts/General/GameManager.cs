@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoSingleton<GameManager>
 {    
-    public List<Character> Characters;
+    private List<Character> _charcters = new List<Character>{Character.Doctor, Character.Engineer, Character.Pilot};
+    public List<Character> Characters => _charcters;
 
 
     /// <summary>
@@ -33,7 +34,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void SelectedCharacters(List<Character> characters)
     {
-        Characters = characters;
+        _charcters = characters;
         StopAllCoroutines();
         StartCoroutine(LoadMainScene());
     }

@@ -11,7 +11,10 @@ public class GameController : MonoSingleton<GameController>
     /// </summary>
     [SerializeField] Player[] _players;
 
+    [SerializeField] PlayerButton[] _playerButtons;
+
     [SerializeField] Cinemachine.CinemachineVirtualCamera _virtualCam;
+
 
     [Header("Runtime")]
     /// <summary>
@@ -36,6 +39,12 @@ public class GameController : MonoSingleton<GameController>
     /// </summary>
     void Start()
     {
+        // init players
+        for(int i = 0; i < GameManager.Instance.Characters.Count; i++)
+        {
+            _players[i].Init(GameManager.Instance.Characters[i]);
+            _playerButtons[i].Init(_players[i], i);
+        }
         SwitchPlayer(0);
     }
 
