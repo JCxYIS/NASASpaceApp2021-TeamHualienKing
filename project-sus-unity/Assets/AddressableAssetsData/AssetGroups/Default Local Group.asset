@@ -41,6 +41,30 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 2800000, guid: e571e3bc75defd541a158371e4db683d, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: e571e3bc75defd541a158371e4db683d, type: 3}
+  - m_GUID: 81785a278e570ca4ca29326616ff8263
+    m_Address: sprite_Engineer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2800000, guid: 81785a278e570ca4ca29326616ff8263, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: 81785a278e570ca4ca29326616ff8263, type: 3}
+  - m_GUID: 16994e9b1672c384992d392e83c05717
+    m_Address: sprite_Philosopher
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2800000, guid: 16994e9b1672c384992d392e83c05717, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: 16994e9b1672c384992d392e83c05717, type: 3}
+  - m_GUID: 6c750dd3f3ce7b244ae2854bfbccddca
+    m_Address: sprite_Pilot
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2800000, guid: 6c750dd3f3ce7b244ae2854bfbccddca, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: 6c750dd3f3ce7b244ae2854bfbccddca, type: 3}
+  - m_GUID: 91a8f1124f7b38845bb2c1b4c8c559c9
+    m_Address: sprite_Doctor
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2800000, guid: 91a8f1124f7b38845bb2c1b4c8c559c9, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: 91a8f1124f7b38845bb2c1b4c8c559c9, type: 3}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 947b381fa01672440be807eb4d37b731, type: 2}
   m_SchemaSet:
