@@ -95,6 +95,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GradientOutline1: {r: 0, g: 1, b: 0.085725546, a: 1}
     - _GradientOutline2: {r: 0.7461073, g: 0.8591039, b: 1, a: 1}
-    - _ImageOutline: {r: 1, g: 1, b: 1, a: 1}
+    - _ImageOutline: {r: 0.73832214, g: 1, b: 0.08018869, a: 1}
     - _SolidOutline: {r: 0, g: 0.9098039, b: 0.8132216, a: 1}
   m_BuildTextureStacks: []
