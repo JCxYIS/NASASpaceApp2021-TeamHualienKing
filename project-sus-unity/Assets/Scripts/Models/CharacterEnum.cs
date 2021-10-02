@@ -11,10 +11,10 @@ public enum Character
     [Description("Fixes Mechanic Failures")]
     Engineer,
 
-    [Description("AAAAAAAAAAAAAA")]
+    [Description("Know How to Fly Planes")]
     Pilot,
 
-    [Description("Payload slot +3")]
+    [Description("Cogito, ergo sum")]
     Philosopher,
 
 }

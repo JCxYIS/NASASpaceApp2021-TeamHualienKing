@@ -762,6 +762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea20c1fa8e5f7f4eba60a9a78a8377b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: 
   IsTriggerStay: 0
 --- !u!61 &411135180
 BoxCollider2D:
@@ -1951,6 +1952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea20c1fa8e5f7f4eba60a9a78a8377b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: 
   IsTriggerStay: 0
 --- !u!1 &938267175
 GameObject:
@@ -2859,6 +2861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea20c1fa8e5f7f4eba60a9a78a8377b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: 
   IsTriggerStay: 0
 --- !u!61 &1355490806
 BoxCollider2D:
@@ -2931,6 +2934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea20c1fa8e5f7f4eba60a9a78a8377b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: 
   IsTriggerStay: 0
 --- !u!61 &1359345735
 BoxCollider2D:
@@ -3465,6 +3469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea20c1fa8e5f7f4eba60a9a78a8377b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: 
   IsTriggerStay: 0
 --- !u!61 &1741146396
 BoxCollider2D:
