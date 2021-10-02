@@ -62,6 +62,13 @@ public class GameController : MonoSingleton<GameController>
             else
                 _players[i].PlayerController.SetCommand(Vector2.zero);
         }
+        for(int i = 0; i <= 9; i++)
+        {
+            if(Input.GetKeyDown(KeyCode.Alpha0 + i))
+            {
+                SwitchPlayer(i);
+            }
+        }
     }
 
     /// <summary>

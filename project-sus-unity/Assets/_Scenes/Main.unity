@@ -514,6 +514,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 289735054}
     m_Modifications:
+    - target: {fileID: 1921496779266647973, guid: de705a3d509f99540800f339776aca38, type: 3}
+      propertyPath: m_text
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4809410431230728160, guid: de705a3d509f99540800f339776aca38, type: 3}
       propertyPath: m_Name
       value: Character Button (1)
@@ -749,7 +753,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703083100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -0.22, y: -1.69, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -955,11 +959,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423716701562169964, guid: 436ecac6ab2734044a75df14452cfb63, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.4
+      value: 3.89
       objectReference: {fileID: 0}
     - target: {fileID: 1423716701562169964, guid: 436ecac6ab2734044a75df14452cfb63, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.01
       objectReference: {fileID: 0}
     - target: {fileID: 1423716701562169964, guid: 436ecac6ab2734044a75df14452cfb63, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1006,6 +1010,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 289735054}
     m_Modifications:
+    - target: {fileID: 1921496779266647973, guid: de705a3d509f99540800f339776aca38, type: 3}
+      propertyPath: m_text
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4809410431230728160, guid: de705a3d509f99540800f339776aca38, type: 3}
       propertyPath: m_Name
       value: Character Button (2)
@@ -1461,7 +1469,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099732904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -0.22, y: -1.69, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 826640101}
@@ -1848,11 +1856,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423716701562169964, guid: 436ecac6ab2734044a75df14452cfb63, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.22
       objectReference: {fileID: 0}
     - target: {fileID: 1423716701562169964, guid: 436ecac6ab2734044a75df14452cfb63, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.69
       objectReference: {fileID: 0}
     - target: {fileID: 1423716701562169964, guid: 436ecac6ab2734044a75df14452cfb63, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1996,6 +2004,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 289735054}
     m_Modifications:
+    - target: {fileID: 1921496779266647973, guid: de705a3d509f99540800f339776aca38, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4809410431230728160, guid: de705a3d509f99540800f339776aca38, type: 3}
       propertyPath: m_Name
       value: Character Button
