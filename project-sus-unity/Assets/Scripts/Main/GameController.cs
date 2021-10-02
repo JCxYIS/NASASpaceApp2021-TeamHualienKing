@@ -17,12 +17,21 @@ public class GameController : MonoSingleton<GameController>
     [SerializeField] Cinemachine.CinemachineVirtualCamera _virtualCam;
 
 
+
     [Header("Runtime")]
     /// <summary>
     /// Which character is the player now controlling?
     /// </summary>
     [ReadOnly]
     public int ControllingPlayerIndex = 0;
+
+    [ReadOnly]
+    public float Time = 0;
+
+    /// <summary>
+    /// progress
+    /// </summary>
+    public float Progress => Time / Settings.GAME_LENGTH;
 
 
 
@@ -70,6 +79,9 @@ public class GameController : MonoSingleton<GameController>
                 SwitchPlayer(i);
             }
         }
+
+        // update time
+        Time += UnityEngine.Time.deltaTime;
     }
 
     /// <summary>

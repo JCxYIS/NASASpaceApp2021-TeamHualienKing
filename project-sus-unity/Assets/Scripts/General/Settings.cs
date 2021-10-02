@@ -11,4 +11,9 @@ public static class Settings
     /// 
     /// </summary>
     public const int PLAYER_COUNT = 3;
+
+    /// <summary>
+    /// Total time length (seconds)
+    /// </summary>
+    public const float GAME_LENGTH = 300;
 }
