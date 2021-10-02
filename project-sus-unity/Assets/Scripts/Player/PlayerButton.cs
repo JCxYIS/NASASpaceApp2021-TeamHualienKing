@@ -11,16 +11,22 @@ public class PlayerButton : MonoBehaviour
     public Image Icon;
     public TMP_Text Name;
     public TMP_Text HpText;
+    public Slider HpSlider;
+    public Image ControlBadge;
 
     [Header("Var")]
     [ReadOnly]
     public Player Player;
+
+    [ReadOnly]
+    public int Index;
 
     
 
     public void Init(Player player, int index)
     {
         Player = player;
+        Index = index;
 
         GetComponent<Button>().onClick.AddListener(()=>GameController.Instance.SwitchPlayer(index));
         
@@ -37,5 +43,12 @@ public class PlayerButton : MonoBehaviour
     void Update()
     {
         HpText.text = $"{Player.Hp}/{Player.HpMax}";
+        HpSlider.value = Player.Hp/(float)Player.HpMax;
+
+        if(GameController.Instance.ControllingPlayerIndex == Index)
+            ControlBadge.color = Color.white;
+        else
+            ControlBadge.color = Color.green;
+
     }
 }

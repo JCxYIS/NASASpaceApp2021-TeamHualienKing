@@ -74,7 +74,7 @@ public class GameController : MonoSingleton<GameController>
         }
         for(int i = 0; i <= 9; i++)
         {
-            if(Input.GetKeyDown(KeyCode.Alpha0 + i))
+            if(Input.GetKeyDown(KeyCode.Alpha0 + i + 1))
             {
                 SwitchPlayer(i);
             }

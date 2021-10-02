@@ -10,7 +10,7 @@ public class TestMissionDanger : Mission
 
     public override string Title => "Someone is hurt";
 
-    public override string Desc => "Ouch the cabin is hit by a comet! His HP -3 per seconds for 10 seconds!";
+    public override string Desc => $"BONK! {victim.name} hit by a baseball bat! His HP -3 per seconds for 10 seconds!";
 
     public override string Link => "https://youtu.be/dQw4w9WgXcQ";
 
@@ -41,6 +41,7 @@ public class TestMissionDanger : Mission
             victim.AddHealth(-3);
             yield return new WaitForSeconds(1);
         }
+        Done();
     }
 
     public override void Done()

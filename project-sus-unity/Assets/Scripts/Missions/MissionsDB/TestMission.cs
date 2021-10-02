@@ -18,13 +18,15 @@ public class TestMission : Mission
 
     public override void ReadInfo()
     {
+        Time.timeScale = 0;
+
         PromptBoxSettings pbs = new PromptBoxSettings{
             Title = Title,
             Content = Desc,
             ConfirmButtonText = "OK",
             CancelButtonText = "NoK",
-            ConfirmCallback = ()=>Done(),
-            CancelCallback = ()=>Fail(),
+            ConfirmCallback = ()=>{Done(); Time.timeScale = 1;},
+            CancelCallback = ()=>{Fail(); Time.timeScale = 1;},
         };
 
         PromptBox.Create(pbs);
