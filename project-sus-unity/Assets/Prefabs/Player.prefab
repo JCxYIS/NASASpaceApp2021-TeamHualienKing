@@ -47,9 +47,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d2cbaba004cc24cb956be9c108b66a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _uiObjectPrefab: {fileID: 2877761219464729660, guid: b8af6f43a48c56742aba9ccb679a2d2a, type: 3}
   Character: 0
   Hp: 0
   HpMax: 0
+  IsControlling: 0
+  UiObject: {fileID: 0}
   PlayerController: {fileID: 0}
 --- !u!114 &1423716701562169939
 MonoBehaviour:

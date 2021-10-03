@@ -43,6 +43,6 @@ public class TestMission : Mission
         {
             p.AddHealth(-50);
         }
-        base.Done();
+        base.Fail();
     }
 }

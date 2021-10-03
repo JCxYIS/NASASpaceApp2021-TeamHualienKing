@@ -13,6 +13,7 @@ public class PlayerButton : MonoBehaviour
     public TMP_Text HpText;
     public Slider HpSlider;
     public Image ControlBadge;
+    public Image ProgressImage;
 
     [Header("Var")]
     [ReadOnly]
@@ -42,13 +43,18 @@ public class PlayerButton : MonoBehaviour
     /// </summary>
     void Update()
     {
-        HpText.text = $"{Player.Hp}/{Player.HpMax}";
+        HpText.text = $"{Player.Hp} / {Player.HpMax}";
         HpSlider.value = Player.Hp/(float)Player.HpMax;
 
         if(GameController.Instance.ControllingPlayerIndex == Index)
             ControlBadge.color = Color.green;
         else
             ControlBadge.color = Color.white;
+
+        if(Player.InteractTimeMax != 0)
+            ProgressImage.fillAmount = Player.InteractTime / Player.InteractTimeMax;
+        else
+            ProgressImage.fillAmount = 0;
 
     }
 }

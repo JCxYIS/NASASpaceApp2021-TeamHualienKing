@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class Facility : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class Facility : MonoBehaviour
 
     [Header("Var")]
     [ReadOnly]
-    public bool IsTriggerStay;
+    public bool IsTriggerStay;    
 
 
 
