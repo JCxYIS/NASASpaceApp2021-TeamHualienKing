@@ -88,6 +88,12 @@ public class GameController : MonoSingleton<GameController>
 
         // update time
         Time += UnityEngine.Time.deltaTime;
+
+        // victory condition
+        if(Progress >= 1)
+        {
+            Victory();
+        }
         
         // cheat
         if(Input.GetKeyDown(KeyCode.F9))

@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 public enum Character
 {
-    [Description("Provides medical care")]
+    [Description("Provides Medical Care")]
     Doctor,
 
     [Description("Fixes Mechanic Failures")]
