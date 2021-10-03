@@ -42,7 +42,7 @@ public class GameManager : MonoSingleton<GameManager>
         SceneManager.LoadScene("CharacterSelect");
     }
 
-    public void SelectedCharacters(List<Character> characters)
+    public void SelectedCharacters(List<Character> characters, bool forceBadEnd)
     {
         _charcters = characters;
         StopAllCoroutines();

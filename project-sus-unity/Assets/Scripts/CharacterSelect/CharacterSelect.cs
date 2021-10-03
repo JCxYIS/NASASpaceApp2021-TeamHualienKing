@@ -78,6 +78,6 @@ public class CharacterSelect : MonoBehaviour
     {
         List<Character> clist = new List<Character>();
         selectedCharacters.ForEach(c => clist.Add(c.Character));
-        GameManager.Instance.SelectedCharacters(clist);
+        GameManager.Instance.SelectedCharacters(clist, Input.GetKey(KeyCode.B));
     }
 }
