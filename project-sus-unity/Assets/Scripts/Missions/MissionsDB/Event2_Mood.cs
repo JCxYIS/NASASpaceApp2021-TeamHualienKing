@@ -26,7 +26,7 @@ public class Event2_Mood : Mission
     void Awake()
     {
         victim = RandomPlayer(Character.Philosopher);
-        victim.AddHealth(-12);
+        victim.AddHealth(-15);
     }
 
     IEnumerator Start()
@@ -34,7 +34,7 @@ public class Event2_Mood : Mission
         while(true)
         {
             victim.AddHealth(-3);
-            yield return new WaitForSeconds(1.6f);
+            yield return new WaitForSeconds(1.5f);
         }
     }
 

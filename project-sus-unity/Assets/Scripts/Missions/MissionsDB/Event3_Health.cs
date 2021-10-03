@@ -33,7 +33,7 @@ public class Event3_Health : Mission
         while(true)
         {
             victim.AddHealth(-1);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.3f);
         }
     }
 

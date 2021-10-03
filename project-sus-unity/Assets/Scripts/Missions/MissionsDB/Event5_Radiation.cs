@@ -22,10 +22,12 @@ public class Event5_Radiation : Mission
 
     IEnumerator Start()
     {
-        for(int i = 5; i > 0; i-- )
+        for(int i = 0; i < 33; i++)
         {
-            AllPlayer().ForEach(p => p.AddHealth(-i*2));
-            yield return new WaitForSeconds(1f);
+            AllPlayer().ForEach(p => p.AddHealth(-1));
+            yield return new WaitForFixedUpdate();
+            yield return new WaitForFixedUpdate();
+            yield return new WaitForFixedUpdate();
         }
         Done();
     }

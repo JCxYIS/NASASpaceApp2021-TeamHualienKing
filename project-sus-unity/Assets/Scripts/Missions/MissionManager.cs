@@ -74,7 +74,7 @@ public class MissionManager : MonoSingleton<MissionManager>
         int lastMission = -12;
         while(true)
         {
-            float chance = Random.Range(60f, 87f) * Mathf.Pow(0.8f, lastMission+50-NowSec);
+            float chance = Random.Range(60f, 87f) * Mathf.Pow(0.8f, lastMission+45-NowSec);
             
             if(lastMission < 0 && NowSec >= 3)
                 chance = chance * 1.9487f + 0.048763f;

@@ -33,7 +33,7 @@ public class Event1_MuscleLoss : Mission
         while(true)
         {
             victim.AddHealth(-1);
-            yield return new WaitForSeconds(0.7f);
+            yield return new WaitForSeconds(0.6f);
         }
     }
 

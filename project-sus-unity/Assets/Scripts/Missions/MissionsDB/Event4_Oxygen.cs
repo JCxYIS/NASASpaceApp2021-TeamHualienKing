@@ -25,7 +25,7 @@ public class Event4_Oxygen : Mission
         while(true)
         {
             AllPlayer().ForEach(p => p.AddHealth(-1));
-            yield return new WaitForSeconds(0.8f);
+            yield return new WaitForSeconds(0.45f);
         }
     }
 
