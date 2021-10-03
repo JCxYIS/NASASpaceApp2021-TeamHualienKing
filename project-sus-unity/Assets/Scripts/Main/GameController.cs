@@ -98,11 +98,10 @@ public class GameController : MonoSingleton<GameController>
         // cheat
         if(Input.GetKeyDown(KeyCode.F9))
         {
-            GameOver();
-        }
-        if(Input.GetKeyDown(KeyCode.F10))
-        {
-            Victory();
+            if(Input.GetKeyDown(KeyCode.LeftShift))
+                Victory();
+            else
+                GameOver();
         }
     }
 

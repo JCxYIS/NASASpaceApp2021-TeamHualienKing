@@ -7,7 +7,7 @@ public class GameManager : MonoSingleton<GameManager>
 {    
     private List<Character> _charcters = new List<Character>{Character.Doctor, Character.Engineer, Character.Pilot};
     public List<Character> Characters => _charcters;
-    public Difficulty Difficulty;
+    public Difficulty Difficulty = new Difficulty();
 
 
     /// <summary>

@@ -55,10 +55,7 @@ public class GameOverScene : MonoBehaviour
     /// </summary>
     void Update()
     {
-        if(Input.anyKeyDown)
-        {
-            SceneManager.LoadScene("Landing");
-        }
+        
     }
 
     /// <summary>
@@ -71,5 +68,10 @@ public class GameOverScene : MonoBehaviour
         {
             Destroy(p.gameObject);
         }
+    }
+
+    public void Next()
+    {
+        SceneManager.LoadScene("Landing");
     }
 }
