@@ -15,5 +15,5 @@ public static class Settings
     /// <summary>
     /// Total time length (seconds)
     /// </summary>
-    public const float GAME_LENGTH = 300;
+    public const float GAME_LENGTH = 183;
 }

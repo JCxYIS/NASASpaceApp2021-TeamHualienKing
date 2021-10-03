@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
     /// </summary>
     void Update()
     {
-        if(TriggeringFacility)
+        if(TriggeringFacility && IsControlling)
         {
             TriggeringFacility.Trigger();
             OnTriggerFacilityStay?.Invoke(TriggeringFacility);
@@ -130,8 +130,6 @@ public class Player : MonoBehaviour
     /// <param name="other">The other Collider2D involved in this collision.</param>
     void OnTriggerStay2D(Collider2D other)
     {
-        if(!IsControlling)
-            return;
 
         Facility facility = other.GetComponent<Facility>();
         if(facility)
@@ -147,9 +145,6 @@ public class Player : MonoBehaviour
     /// <param name="other">The other Collider2D involved in this collision.</param>
     void OnTriggerExit2D(Collider2D other)
     {
-        if(!IsControlling)
-            return;
-
         Facility facility = other.GetComponent<Facility>();
         if(facility)
         {

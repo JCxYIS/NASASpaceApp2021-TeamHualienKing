@@ -3,16 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class Event2_Mood : Mission
+public class Event3_Health : Mission
 {
-    public override int Id => 2;
+    public override int Id => 3;
 
-    public override Fatalness Fatalness => Fatalness.Information;
+    public override Fatalness Fatalness => Fatalness.Warning;
 
-    public override string Title => $"{victim.name} is in a Bad Mood";
+    public override string Title => $"{victim.name} is not comfortable!";
 
-    public override string Desc => $"<color=yellow>{victim.name}</color>'s mood is quite bad!\n"+
-                                    "Consider go to <color=yellow>sleep module</color>, have a nice sleep";
+    public override string Desc => $"Please go to the <color=yellow>medical module</color> to get some help!";
 
     public override string Link => "";
 
@@ -25,16 +24,16 @@ public class Event2_Mood : Mission
     /// </summary>
     void Awake()
     {
-        victim = RandomPlayer(Character.Philosopher);
-        victim.AddHealth(-12);
+        victim = RandomPlayer(Character.Doctor);
+        victim.AddHealth(-15);
     }
 
     IEnumerator Start()
     {
         while(true)
         {
-            victim.AddHealth(-3);
-            yield return new WaitForSeconds(1.6f);
+            victim.AddHealth(-1);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 
@@ -56,16 +55,16 @@ public class Event2_Mood : Mission
 
     private void OnVictimTriggerFacilityStay(Facility obj)
     {
-        if(obj.Name == "Sleeping Module")
+        if(obj.Name == "Medical Module")
         {
             victim.UpdateInteractTimeMax(5);
             if(victim.TickInteractTime())
             {
                 enabled = false;
                 CreateInformativeBox(
-                    title: $"{victim.name}'s mood has been improved!",
-                    desc:"During space travel, being in a closed, small space for a long time may cause many adverse effects on the human body.\n"+
-                         "In addition to bad mood, that may also reduce cognition, morale, and interpersonal interaction, those will serious affect teamwork and task progress.",
+                    title: $"{victim.name} feels better!",
+                    desc:"On the shuttle, due to the distance from the Earth, the space center may not be able to immediately give astrinauts a hand. Astronauts need to have the ability to solve problems by themself.\n"+
+                         "And it is also very important of having adequate and good food and medicine reserves.",
                     link:"https://www.nasa.gov/hrp/hazards-of-human-spaceflight-videos",
                     OnConfirmExtraWork: ()=>Done());
             }
@@ -77,7 +76,7 @@ public class Event2_Mood : Mission
 
     public override void Done()
     {
-        victim.AddHealth(5);
+        victim.AddHealth(3);
         base.Done();
     }
 

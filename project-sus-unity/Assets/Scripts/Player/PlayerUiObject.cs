@@ -33,7 +33,7 @@ public class PlayerUiObject : MonoBehaviour
     void Update()
     {
         rectTransform.anchoredPosition = JC.Utility.UIPosition.WorldToCanvasPos(Player.transform.position, CanvasRect, cam);
-        // _nameText.text = $"{Player.name} ({Player.Hp}/{Player.HpMax}";
+        _nameText.text = $"{Player.name}";
         
         if(Player.InteractTimeMax != 0)
             _progressImage.fillAmount = Player.InteractTime / Player.InteractTimeMax;

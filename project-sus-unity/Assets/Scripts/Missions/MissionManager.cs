@@ -68,11 +68,13 @@ public class MissionManager : MonoSingleton<MissionManager>
 
     IEnumerator Tick()
     {
-        int lastMission = -5;
+        int lastMission = -12;
         while(true)
         {
             float chance = Random.Range(60f, 87f) * Mathf.Pow(0.8f, lastMission+50-NowSec);
             
+            if(lastMission < 0 && NowSec >= 3)
+                chance = chance * 1.48763f + 4.8763f;
             
             float fate = Random.Range(0f, 1f);
             if(fate <= chance)
