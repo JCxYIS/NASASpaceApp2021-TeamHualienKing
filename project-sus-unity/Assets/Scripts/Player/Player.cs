@@ -70,7 +70,11 @@ public class Player : MonoBehaviour
         if(TriggeringFacility)
         {
             OnTriggerFacilityStay?.Invoke(this, TriggeringFacility);
-            TriggeringFacility.Trigger();
+
+            if(IsControlling)
+            {
+                TriggeringFacility.Trigger();
+            }
         }
     }
 

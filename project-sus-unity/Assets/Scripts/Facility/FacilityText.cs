@@ -44,6 +44,7 @@ public class FacilityText : MonoBehaviour
 
     void UpdateText(Player p, Facility facility)
     {
-        fac = facility;
+        if(p.IsControlling)
+            fac = facility;
     }
 }
