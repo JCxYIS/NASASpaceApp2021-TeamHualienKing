@@ -8,7 +8,7 @@ using UnityEngine.Video;
 
 public class BADEND : MonoBehaviour
 {
-    // [SerializeField] VideoClip videoClip;
+    [SerializeField] VideoPlayer videoPlayer;
     [SerializeField] Button button;
     [SerializeField] TMP_Text buttonText;
 
@@ -16,6 +16,13 @@ public class BADEND : MonoBehaviour
     IEnumerator Start()
     {
         button.enabled = false;
+
+        #if UNITY_WEBGL
+        string filePath = System.IO.Path.Combine(Application.streamingAssetsPath, "challenger_disaster_cut.mp4");
+        videoPlayer.url = filePath;
+        #endif
+
+        videoPlayer.Play();
         for(int i = 5; i > 0; i--)
         {
             buttonText.text = $"You can skip in {i}...";
