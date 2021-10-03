@@ -5,7 +5,7 @@ using System;
 
 public static class Settings
 {
-    public const string VESRION = "v.1.0";
+    public const string VESRION = "v.1.1";
 
     /// <summary>
     /// 
@@ -15,5 +15,5 @@ public static class Settings
     /// <summary>
     /// Total time length (seconds)
     /// </summary>
-    public const float GAME_LENGTH = 183;
+    public const float GAME_LENGTH = 180;
 }

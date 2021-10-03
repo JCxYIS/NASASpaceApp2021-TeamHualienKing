@@ -28,6 +28,8 @@ public class MissionManager : MonoSingleton<MissionManager>
     [ReadOnly]
     public int NowSec = 0;
 
+    public static int SolvedMissions = 0;
+
 
 
     /// <summary>
@@ -52,6 +54,7 @@ public class MissionManager : MonoSingleton<MissionManager>
     /// </summary>
     void Start()
     {
+        SolvedMissions = 0;
         StartCoroutine(Tick());
     }
 

@@ -59,6 +59,8 @@ public class Player : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    
+
     /// <summary>
     /// Update is called every frame, if the MonoBehaviour is enabled.
     /// </summary>
@@ -87,6 +89,17 @@ public class Player : MonoBehaviour
         UiObject = Instantiate(_uiObjectPrefab, canvas.transform).GetComponent<PlayerUiObject>();
         UiObject.Player = this;
         UiObject.CanvasRect = canvas.GetComponent<RectTransform>();
+
+        StartCoroutine(Coroutine());
+    }
+
+    IEnumerator Coroutine()
+    {
+        while(true)
+        {
+            AddHealth(1);
+            yield return new WaitForSeconds(1.339f);  // because i wear miku shirt now :D
+        }
     }
 
 

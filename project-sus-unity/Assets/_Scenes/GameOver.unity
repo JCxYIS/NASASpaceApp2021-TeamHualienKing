@@ -735,7 +735,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: One of your crew member is found dead...
+  m_text: One of your crew member is dead...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 66040d22258b9b64bb2153359d171e46, type: 2}
   m_sharedMaterial: {fileID: 1011395583981116280, guid: 66040d22258b9b64bb2153359d171e46, type: 2}
@@ -1320,6 +1320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf4e9acd6547224e95a31e853c1604b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ResultText: {fileID: 699611109}
   HappyBalls: []
 --- !u!1 &2025798094
 GameObject:

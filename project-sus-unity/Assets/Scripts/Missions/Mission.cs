@@ -52,6 +52,7 @@ public abstract class Mission : MonoBehaviour
     public virtual void Done()
     {
         MissionManager.Instance.RemoveMission(this);
+        MissionManager.SolvedMissions++;
         Destroy(gameObject);
     }
 

@@ -1,10 +1,12 @@
 using UnityEngine;
+using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 public class GameOverScene : MonoBehaviour
 {
+    [SerializeField] TMP_Text ResultText;
     [SerializeField] List<Rigidbody2D> HappyBalls;
 
     Player[] players;
@@ -38,7 +40,9 @@ public class GameOverScene : MonoBehaviour
             {
                 Destroy(p.gameObject);
             }
-        }        
+        }    
+
+        ResultText.text = "Challenge Accomplished: "+MissionManager.SolvedMissions;
     }
 
     /// <summary>
