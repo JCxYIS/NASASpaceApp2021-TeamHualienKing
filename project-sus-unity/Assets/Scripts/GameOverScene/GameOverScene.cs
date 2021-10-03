@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameOverScene : MonoBehaviour
 {
     [SerializeField] TMP_Text ResultText;
+    [SerializeField] TMP_Text DifficultyText;
     [SerializeField] List<Rigidbody2D> HappyBalls;
 
     Player[] players;
@@ -20,7 +21,7 @@ public class GameOverScene : MonoBehaviour
     {
         players = GameObject.FindObjectsOfType<Player>();
         
-        if(HappyBalls.Count == 0)
+        if(HappyBalls.Count == 0)  // lose
         {
             foreach(var p in players)
             {
@@ -29,7 +30,7 @@ public class GameOverScene : MonoBehaviour
                 p.PlayerController.SetVelocity(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * 14.8763f);
             }
         }
-        else
+        else // win
         {
             foreach(var ball in HappyBalls)
             {
@@ -40,9 +41,13 @@ public class GameOverScene : MonoBehaviour
             {
                 Destroy(p.gameObject);
             }
+            int m = PlayerPrefs.GetInt("MAX_DIFF", 0);
+            m++;
+            PlayerPrefs.SetInt("MAX_DIFF", m);
         }    
 
         ResultText.text = "Challenge Accomplished: "+MissionManager.SolvedMissions;
+        DifficultyText.text = "Difficulty: "+GameManager.Instance.Difficulty.Title;
     }
 
     /// <summary>

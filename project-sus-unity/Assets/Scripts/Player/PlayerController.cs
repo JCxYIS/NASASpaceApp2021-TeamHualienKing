@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        speed *= GameManager.Instance.Difficulty.MoveSpeed_Scale;
     }
 
     void Update()

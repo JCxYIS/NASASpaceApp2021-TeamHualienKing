@@ -31,7 +31,7 @@ public class GameController : MonoSingleton<GameController>
     /// <summary>
     /// progress
     /// </summary>
-    public float Progress => Time / Settings.GAME_LENGTH;
+    public float Progress => Time / GameManager.Instance.Difficulty.Game_Length;
 
 
 
