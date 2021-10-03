@@ -9,7 +9,7 @@ public class Event1_MuscleLoss : Mission
 
     public override Fatalness Fatalness => Fatalness.Information;
 
-    public override string Title => $"[{victim.name}]: Decreasing muscle mass and bone density";
+    public override string Title => $"{victim.name} is suffer from decreasing muscle mass and bone density";
 
     public override string Desc => $"<color=yellow>{victim.name}'s</color> muscle mass and bone density are decreasing!\n"+
                                     "Please go to <color=yellow>Gymnasium Module</color> to do some exercise!";
@@ -33,7 +33,7 @@ public class Event1_MuscleLoss : Mission
         while(true)
         {
             victim.AddHealth(-1);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.7f);
         }
     }
 
@@ -57,7 +57,7 @@ public class Event1_MuscleLoss : Mission
     {
         if(obj.Name == "Gymnasium Module")
         {
-            victim.UpdateInteractTimeMax(5);
+            victim.UpdateInteractTimeMax(3);
             if(victim.TickInteractTime())
             {
                 enabled = false;
@@ -76,6 +76,7 @@ public class Event1_MuscleLoss : Mission
 
     public override void Done()
     {
+        victim.AddHealth(5);
         base.Done();
     }
 

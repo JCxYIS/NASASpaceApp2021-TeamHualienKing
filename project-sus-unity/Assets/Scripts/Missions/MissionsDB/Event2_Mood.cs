@@ -3,16 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class Event2_MuscleLoss : Mission
+public class Event2_Mood : Mission
 {
     public override int Id => 2;
 
     public override Fatalness Fatalness => Fatalness.Information;
 
-    public override string Title => $"[{victim.name}] is in a Bad Mood";
+    public override string Title => $"{victim.name} is in a Bad Mood";
 
-    public override string Desc => $"<color=yellow>{victim.name}'s mood is quite bad!\n"+
-                                    "Consider go to sleep module, have a nice sleep";
+    public override string Desc => $"<color=yellow>{victim.name}</color>'s mood is quite bad!\n"+
+                                    "Consider go to <color=yellow>sleep module</color>, have a nice sleep";
 
     public override string Link => "";
 
@@ -34,7 +34,7 @@ public class Event2_MuscleLoss : Mission
         while(true)
         {
             victim.AddHealth(-3);
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(1.6f);
         }
     }
 
@@ -56,7 +56,7 @@ public class Event2_MuscleLoss : Mission
 
     private void OnVictimTriggerFacilityStay(Facility obj)
     {
-        if(obj.Name == "Gymnasium Module")
+        if(obj.Name == "Sleeping Module")
         {
             victim.UpdateInteractTimeMax(5);
             if(victim.TickInteractTime())
