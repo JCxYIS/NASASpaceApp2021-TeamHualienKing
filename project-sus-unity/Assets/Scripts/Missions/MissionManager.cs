@@ -60,7 +60,7 @@ public class MissionManager : MonoSingleton<MissionManager>
     /// </summary>
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F2))
+        if(Input.GetKeyDown(KeyCode.F7))
         {
             StartMission();
         }
@@ -74,7 +74,7 @@ public class MissionManager : MonoSingleton<MissionManager>
             float chance = Random.Range(60f, 87f) * Mathf.Pow(0.8f, lastMission+50-NowSec);
             
             if(lastMission < 0 && NowSec >= 3)
-                chance = chance * 1.48763f + 4.8763f;
+                chance = chance * 1.9487f + 0.048763f;
             
             float fate = Random.Range(0f, 1f);
             if(fate <= chance)
