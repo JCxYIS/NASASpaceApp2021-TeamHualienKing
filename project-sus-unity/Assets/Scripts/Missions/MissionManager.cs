@@ -68,7 +68,7 @@ public class MissionManager : MonoSingleton<MissionManager>
 
     IEnumerator Tick()
     {
-        int lastMission = 0;
+        int lastMission = -5;
         while(true)
         {
             float chance = Random.Range(60f, 87f) * Mathf.Pow(0.8f, lastMission+50-NowSec);

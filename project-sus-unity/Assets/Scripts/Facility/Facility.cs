@@ -36,7 +36,12 @@ public class Facility : MonoBehaviour
     /// </summary>
     void Update()
     {
+        if(IsTriggerStay)
+            _spriteRenderer.material = OutlinedMaterial;
+        else
+            _spriteRenderer.material = NormalMaterial;
         
+        IsTriggerStay = false;
     }
 
     /// <summary>
@@ -44,12 +49,7 @@ public class Facility : MonoBehaviour
     /// </summary>
     void FixedUpdate()
     {
-        if(IsTriggerStay)
-            _spriteRenderer.material = OutlinedMaterial;
-        else
-            _spriteRenderer.material = NormalMaterial;
         
-        IsTriggerStay = false;
     }
 
     public void Trigger()

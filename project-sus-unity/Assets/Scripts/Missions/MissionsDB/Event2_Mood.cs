@@ -3,18 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class Event1_MuscleLoss : Mission
+public class Event2_MuscleLoss : Mission
 {
-    public override int Id => 1;
+    public override int Id => 2;
 
     public override Fatalness Fatalness => Fatalness.Information;
 
-    public override string Title => $"[{victim.name}]: Decreasing muscle mass and bone density";
+    public override string Title => $"[{victim.name}] is in a Bad Mood";
 
-    public override string Desc => $"<color=yellow>{victim.name}'s</color> muscle mass and bone density are decreasing!\n"+
-                                    "Please go to <color=yellow>Gymnasium Module</color> to do some exercise!";
+    public override string Desc => $"<color=yellow>{victim.name}'s mood is quite bad!\n"+
+                                    "Consider go to sleep module, have a nice sleep";
 
-    public override string Link => "https://www.nasa.gov/hrp/hazards-of-human-spaceflight-videos";
+    public override string Link => "";
 
     [ReadOnly] 
     public Player victim;
@@ -26,14 +26,15 @@ public class Event1_MuscleLoss : Mission
     void Awake()
     {
         victim = RandomPlayer();
+        victim.AddHealth(-12);
     }
 
     IEnumerator Start()
     {
         while(true)
         {
-            victim.AddHealth(-1);
-            yield return new WaitForSeconds(1);
+            victim.AddHealth(-3);
+            yield return new WaitForSeconds(3);
         }
     }
 
@@ -62,10 +63,10 @@ public class Event1_MuscleLoss : Mission
             {
                 enabled = false;
                 CreateInformativeBox(
-                    title: "The situation has been improved!",
-                    desc:"In microgravity environment, astronaut's muscle mass will decrease at a rate of 1% per month.\n"+
-                        "Therefore, astronauts spend about two and a half hours a day exercising to maintain physical function.",
-                    link:"https://www.nasa.gov/stem/feature/shannon-walker-a-day-in-the-life-on-the-international-space-station.html",
+                    title: "A's mood has been improved!",
+                    desc:"During space travel, being in a closed, small space for a long time may cause many adverse effects on the human body.\n"+
+                         "In addition to bad mood, that may also reduce cognition, morale, and interpersonal interaction, those will serious affect teamwork and task progress.",
+                    link:"https://www.nasa.gov/hrp/hazards-of-human-spaceflight-videos",
                     OnConfirmExtraWork: ()=>Done());
             }
         }
@@ -76,6 +77,7 @@ public class Event1_MuscleLoss : Mission
 
     public override void Done()
     {
+        victim.AddHealth(5);
         base.Done();
     }
 
