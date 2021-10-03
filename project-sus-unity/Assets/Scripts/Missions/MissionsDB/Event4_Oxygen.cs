@@ -52,7 +52,7 @@ public class Event4_Oxygen : Mission
         {
             enabled = false;
             CreateInformativeBox(
-                title: $"There's new fresh air again!",
+                title: $"There's fresh air again!",
                 desc:"Excessive carbon dioxide concentration can cause fatigue, rapid heartbeat, and dizziness in mild; loss of consciousness, muscle tremor, and even death in the severe case.\n"+
                      "In Apollo 13 mission, there was a serious carbon dioxide scrubber problem.",
                 link:"https://www.nasa.gov/mission_pages/apollo/missions/apollo13.html",

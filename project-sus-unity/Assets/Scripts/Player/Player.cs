@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
         HpMax = 100;
         Hp = HpMax;
 
-        Canvas canvas = GameObject.FindObjectOfType<Canvas>();
+        Canvas canvas = new List<Canvas>(GameObject.FindObjectsOfType<Canvas>()).Find(c => c.CompareTag("MainCanvas"));
         UiObject = Instantiate(_uiObjectPrefab, canvas.transform).GetComponent<PlayerUiObject>();
         UiObject.Player = this;
         UiObject.CanvasRect = canvas.GetComponent<RectTransform>();
