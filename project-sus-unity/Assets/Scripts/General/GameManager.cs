@@ -52,15 +52,15 @@ public class GameManager : MonoSingleton<GameManager>
         PlayerPrefs.SetInt("GAME_COUNT", playCount);
         float rdn = Random.value;
         print("RDN="+rdn+", PLAYCOUNT="+playCount);
-        if(rdn < 0.9f && playCount != 2)
-            StartCoroutine(LoadMainScene());
+        if( (rdn < 0.9f && playCount != 2 && !forceBadEnd) || playCount == 1)
+            StartCoroutine(LoadMainScene("Main"));
         else
-            StartCoroutine(LoadBadEnd());
+            StartCoroutine(LoadMainScene("BAD END"));
     }
 
-    public IEnumerator LoadMainScene()
+    public IEnumerator LoadMainScene(string sceneName)
     {
-        var load = SceneManager.LoadSceneAsync("Main");
+        var load = SceneManager.LoadSceneAsync(sceneName);
         // load.allowSceneActivation = false;
         LoadingScreen.SetContext("Now Loading...");
         while(!load.isDone)
@@ -69,20 +69,6 @@ public class GameManager : MonoSingleton<GameManager>
             yield return load;
         }
 
-        // load.allowSceneActivation = true;
-        LoadingScreen.SetProgress(1);
-    }
-
-    public IEnumerator LoadBadEnd()
-    {
-        var load = Addressables.LoadSceneAsync("BAD END");
-        // load.allowSceneActivation = false;
-        LoadingScreen.SetContext("Now Loading...");
-        while(!load.IsDone)
-        {
-            LoadingScreen.SetProgress(load.PercentComplete);            
-            yield return load;
-        }
         // load.allowSceneActivation = true;
         LoadingScreen.SetProgress(1);
     }

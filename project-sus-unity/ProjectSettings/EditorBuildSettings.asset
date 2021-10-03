@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Victory.unity
     guid: 4518aa9327f91fe4aae696dbbb074a01
+  - enabled: 1
+    path: Assets/_Scenes/BAD END.unity
+    guid: ab6f964e6eac4604fb5f69c4cdd8d668
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 049a56e764903f640b5706ff383085af, type: 2}

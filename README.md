@@ -49,4 +49,5 @@ License: https://filmmusic.io/standard-license
 ## Urls
 - Project Site: https://2021.spaceappschallenge.org/challenges/statements/the-trail-to-mars-can-you-keep-your-crew-alive/teams/ark-hualien
 - Source Code: https://github.com/JCxYIS/NASASpaceApp2021-TeamHualienKing
+- Video: https://www.youtube.com/watch?v=HsS5BVXJYkc
 - Demo: https://jcxyis.itch.io/ark-hualien
