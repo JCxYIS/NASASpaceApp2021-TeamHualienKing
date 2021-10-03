@@ -46,9 +46,9 @@ public class Event4_Oxygen : Mission
         AllPlayer().ForEach(p => p.OnTriggerFacilityStay -= OnTriggerFacilityStay);
     }
 
-    private void OnTriggerFacilityStay(Facility obj)
+    private void OnTriggerFacilityStay(Player player, Facility obj)
     {
-        if(obj.Name == "Carbon Dioxide Scrubber")
+        if(player.IsControlling && obj.Name == "Carbon Dioxide Scrubber")
         {
             enabled = false;
             CreateInformativeBox(

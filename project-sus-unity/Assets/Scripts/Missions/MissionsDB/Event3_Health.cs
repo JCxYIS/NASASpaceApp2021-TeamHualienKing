@@ -53,7 +53,7 @@ public class Event3_Health : Mission
         victim.OnTriggerFacilityStay -= OnVictimTriggerFacilityStay;
     }
 
-    private void OnVictimTriggerFacilityStay(Facility obj)
+    private void OnVictimTriggerFacilityStay(Player player, Facility obj)
     {
         if(obj.Name == "Medical Module")
         {

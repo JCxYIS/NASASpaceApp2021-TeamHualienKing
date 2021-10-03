@@ -42,7 +42,7 @@ public class FacilityText : MonoBehaviour
         }
     }
 
-    void UpdateText(Facility facility)
+    void UpdateText(Player p, Facility facility)
     {
         fac = facility;
     }

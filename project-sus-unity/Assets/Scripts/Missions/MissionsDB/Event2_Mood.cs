@@ -54,7 +54,7 @@ public class Event2_Mood : Mission
         victim.OnTriggerFacilityStay -= OnVictimTriggerFacilityStay;
     }
 
-    private void OnVictimTriggerFacilityStay(Facility obj)
+    private void OnVictimTriggerFacilityStay(Player player, Facility obj)
     {
         if(obj.Name == "Sleeping Module")
         {

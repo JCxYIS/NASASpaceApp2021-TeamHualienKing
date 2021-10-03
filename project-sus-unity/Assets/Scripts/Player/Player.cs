@@ -41,11 +41,12 @@ public class Player : MonoBehaviour
     [ReadOnly]
     public Facility TriggeringFacility;
 
+
     /// <summary>
     /// If this player is controlled, and interact with some facility.
     /// Has synced in update time
     /// </summary>
-    public Action<Facility> OnTriggerFacilityStay;
+    public Action<Player, Facility> OnTriggerFacilityStay;
 
 
 
@@ -66,10 +67,10 @@ public class Player : MonoBehaviour
     /// </summary>
     void Update()
     {
-        if(TriggeringFacility && IsControlling)
+        if(TriggeringFacility)
         {
+            OnTriggerFacilityStay?.Invoke(this, TriggeringFacility);
             TriggeringFacility.Trigger();
-            OnTriggerFacilityStay?.Invoke(TriggeringFacility);
         }
     }
 
