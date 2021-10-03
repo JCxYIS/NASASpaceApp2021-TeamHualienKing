@@ -78,8 +78,10 @@ public class MissionManager : MonoSingleton<MissionManager>
                 * GameManager.Instance.Difficulty.Challenge_BasePercent 
                 * Mathf.Pow(0.8f, lastMission+GameManager.Instance.Difficulty.Challenge_BaseInterval-NowSec);
             
-            if(lastMission < 0 && NowSec >= 3)
+            if(lastMission < 0 && NowSec > 3)
                 chance = chance * 1.9487f + 0.048763f;
+            else if(NowSec <= 3)
+                chance = 0.01f;
             
             float fate = Random.Range(0f, 1f);
             if(fate <= chance)

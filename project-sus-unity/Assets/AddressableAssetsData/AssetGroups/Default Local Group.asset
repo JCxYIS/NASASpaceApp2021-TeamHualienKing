@@ -41,6 +41,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 2800000, guid: 91a8f1124f7b38845bb2c1b4c8c559c9, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 91a8f1124f7b38845bb2c1b4c8c559c9, type: 3}
+  - m_GUID: ab6f964e6eac4604fb5f69c4cdd8d668
+    m_Address: BAD END
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 102900000, guid: ab6f964e6eac4604fb5f69c4cdd8d668, type: 3}
+    m_TargetAsset: {fileID: 102900000, guid: ab6f964e6eac4604fb5f69c4cdd8d668, type: 3}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 947b381fa01672440be807eb4d37b731, type: 2}
   m_SchemaSet:

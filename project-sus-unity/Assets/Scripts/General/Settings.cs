@@ -5,7 +5,7 @@ using System;
 
 public static class Settings
 {
-    public const string VESRION = "v.1.3";
+    public const string VESRION = "v.1.4";
 
     /// <summary>
     /// 

@@ -18,6 +18,8 @@ When message appears, it will tell you what happened and what to do.
 When you reach the specific area, a circle may appear to tell you how much time it need to use.
 You can then switch to other character (but keep in mind that the character needs to stay at that area)
 
+<!-- **There's 10% chacnce to trigger a different ending** -->
+
 
 ## Credit
 

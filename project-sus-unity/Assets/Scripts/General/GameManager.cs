@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.AddressableAssets;
 
 public class GameManager : MonoSingleton<GameManager>
 {    
@@ -24,11 +25,11 @@ public class GameManager : MonoSingleton<GameManager>
     /// </summary>
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F7))
+        if(Input.GetKeyDown(KeyCode.F9) && Input.GetKeyDown(KeyCode.LeftShift))
         {
             PlayerPrefs.DeleteAll();
         }
-        if(Input.GetKeyDown(KeyCode.F8))
+        if(Input.GetKeyDown(KeyCode.F9))
         {
             PlayerPrefs.SetInt("MAX_DIFF", 888);
         }
@@ -45,20 +46,43 @@ public class GameManager : MonoSingleton<GameManager>
     {
         _charcters = characters;
         StopAllCoroutines();
-        StartCoroutine(LoadMainScene());
+
+        int playCount = PlayerPrefs.GetInt("GAME_COUNT", 0);
+        playCount++;
+        PlayerPrefs.SetInt("GAME_COUNT", playCount);
+        float rdn = Random.value;
+        print("RDN="+rdn+", PLAYCOUNT="+playCount);
+        if(rdn < 0.9f && playCount != 2)
+            StartCoroutine(LoadMainScene());
+        else
+            StartCoroutine(LoadBadEnd());
     }
 
     public IEnumerator LoadMainScene()
     {
         var load = SceneManager.LoadSceneAsync("Main");
         // load.allowSceneActivation = false;
-        LoadingScreen.SetContext("Now Loading Main Scene");
+        LoadingScreen.SetContext("Now Loading...");
         while(!load.isDone)
         {
             LoadingScreen.SetProgress(load.progress);            
             yield return load;
         }
 
+        // load.allowSceneActivation = true;
+        LoadingScreen.SetProgress(1);
+    }
+
+    public IEnumerator LoadBadEnd()
+    {
+        var load = Addressables.LoadSceneAsync("BAD END");
+        // load.allowSceneActivation = false;
+        LoadingScreen.SetContext("Now Loading...");
+        while(!load.IsDone)
+        {
+            LoadingScreen.SetProgress(load.PercentComplete);            
+            yield return load;
+        }
         // load.allowSceneActivation = true;
         LoadingScreen.SetProgress(1);
     }
